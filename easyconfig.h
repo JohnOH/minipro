@@ -13,15 +13,15 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with this program; if not, write to the Free Software
-// Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 int Config_init(const char *conf_name);
 
 char *Config_get_str(const char *par_name);
-void Config_set_str(const char *par_name, const char *par_value);
+int Config_set_str(const char *par_name, const char *par_value);
 
 int Config_get_int(const char *par_name);
-void Config_set_int(const char *par_name, unsigned int value);
+int Config_set_int(const char *par_name, unsigned int value);
 
 int Config_open(const char *path);
 int Config_close();

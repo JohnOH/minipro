@@ -18,13 +18,13 @@ struct {
 	char *filename;
 	device_t *device;
 	enum { UNSPECIFIED = 0, CODE, DATA, CONFIG } page;
-        int erase;
-        int protect_off;
-        int protect_on;
-        int size_error;
-        int size_nowarn;
-        int verify;
-        int icsp;
+	int erase;
+	int protect_off;
+	int protect_on;
+	int size_error;
+	int size_nowarn;
+	int verify;
+	int icsp;
 		int idcheck_continue;
 } cmdopts;
 
@@ -547,13 +547,14 @@ int main(int argc, char **argv) {
 				PERROR("Unknown AVR device");
 		  }
 		  break;
- 	        case 0x10063:   //  select 2 fuses
+		case 0x10063:   //  select 2 fuses
 		  device->fuses=pic2_fuses;
 		  device->protocol_id&=0xFFFF;
 		  break;
 		  
 		case 0x63:
 		case 0x65:
+		case 0x66:
 			device->fuses = pic_fuses;
 			break;
 	}
